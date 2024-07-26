@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Trip</title>
+</head>
+<body>
+    <h1>Plan Your Trip</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label for="id_destination">Destination:</label>
+            {{ form.destination }}
+        </p>
+        <p>
+            <label for="id_departure_date">Departure Date:</label>
+            {{ form.departure_date }}
+        </p>
+        <p>
+            <label for="id_return_date">Return Date:</label>
+            {{ form.return_date }}
+        </p>
+        <p>
+            <label for="id_number_of_travelers">Number of Travelers:</label>
+            {{ form.number_of_travelers }}
+        </p>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
