@@ -3,7 +3,7 @@ from .forms import TripForm
 
 def make_trip(request):
     context = {
-        'form' : form,
+        'form' : TripForm,
     }
     if request.method == 'POST':
         form = TripForm(request.POST)
@@ -13,7 +13,7 @@ def make_trip(request):
     else:
         form = TripForm()
     
-    return render(request, 'maketrip.html', context)
+    return render(request, 'templates/vacationappointment/maketrip.html', context)
 
 
 
