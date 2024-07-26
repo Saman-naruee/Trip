@@ -1,10 +1,16 @@
-from django.shortcuts import render
-from .forms import InputForm
+from django.shortcuts import render, redirect, HttpResponseRedirect
+from .forms import TripForm
 
-def MakeTrip(request):
-    path = 'maketrip.html'
+def make_trip(request):
     context = {
-        'form' : InputForm(),
+        'form' : form,
     }
-    return render(request, path, context)
-
+    if request.method == 'POST':
+        form = TripForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('trip_success')
+    else:
+        form = TripForm()
+    
+    return render(request, 'maketrip.html', context)
