@@ -14,3 +14,8 @@ def make_trip(request):
         form = TripForm()
     
     return render(request, 'maketrip.html', context)
+
+
+
+# git checkout feature-branch
+# git pull origin feature-branch
