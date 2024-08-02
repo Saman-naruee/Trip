@@ -8,4 +8,4 @@ class Trip(models.Model):
     number_of_travelers = models.IntegerField()
     creater_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    Numb = models.CharField(max_length=3)

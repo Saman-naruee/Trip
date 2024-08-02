@@ -13,7 +13,7 @@ def make_trip(request):
     else:
         form = TripForm()
     
-    return render(request, 'templates/vacationappointment/maketrip.html', context)
+    return render(request, 'templates/bookings/maketrip.html', context)
 
 
 
