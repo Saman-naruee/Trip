@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from .forms import TripForm
 
+
 def make_trip(request):
     context = {
         'form' : TripForm,
@@ -14,6 +15,15 @@ def make_trip(request):
         form = TripForm()
     
     return render(request, 'templates/bookings/maketrip.html', context)
+
+def trip_list(request):
+    pass
+
+class TripUpdate():
+    pass
+
+class DeleteTrip():
+    pass
 
 
 
