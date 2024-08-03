@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trips List</title>
+</head>
+<body>
+    <h1>Trips List</h1>
+    <ul>
+        {% for trip in trips %}
+            <li>{{ trip.destination }} - <a href="{% url 'update_trip' trip.pk %}">Update</a> | <a href="{% url 'delete_trip' trip.pk %}">Delete</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
