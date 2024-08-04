@@ -32,7 +32,7 @@ def trip_update(request, id):
         form = TripForm(request.POST, instance=trip)
         if form.is_valid():
             form.save()
-            return redirect(list_trips)
+            return redirect('list_trips')
     else:
         form = TripForm(instance=trip)
     context = {
@@ -44,7 +44,13 @@ def trip_update(request, id):
 def delete_trip(request, id):
     path = 'bookings/confirm_delete.html' 
     trip = get_object_or_404(Trip, id = id)
-    if request.method == 'POST':
+    if request.method == 'GET': # should be POST
         trip.delete()
-        return redirect(list_trips)
-    return render(request, path, context={'trip', 'trip'})
+        return redirect('list_trips') # should redirect to confirm html form so must redirect to confirm_delete()
+    return render(request, path, context={'trip', trip})
+
+
+def confirm_delete(request, id):
+    path = 'bookings/confirm_delete.html' 
+    trip = get_object_or_404(Trip, id = id)
+    return render(request, path, context={'trip', trip})

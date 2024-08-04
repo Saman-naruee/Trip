@@ -1,13 +1,16 @@
+<!-- bookings/templates/bookings/confirm_delete.html -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Delete Trip</title>
+    <title>Confirm Delete</title>
 </head>
 <body>
     <h1>Are you sure you want to delete this trip?</h1>
+    <p>{{ trip.destination }}</p>
     <form method="post">
         {% csrf_token %}
         <button type="submit">Yes, delete</button>
     </form>
+    <a href="{% url 'list_trips' %}">Cancel</a>
 </body>
 </html>
