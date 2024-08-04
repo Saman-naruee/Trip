@@ -9,5 +9,5 @@ class TripForm(forms.ModelForm):
             'departure_date' : forms.DateInput(attrs={'type': 'date'}),
             'return_date' : forms.DateInput(attrs={'type':'date'}),
             'number_of_travelers': forms.NumberInput(attrs={'min': 1}),
-            'destination': forms.TextInput(attrs={'placeholder': 'Enter destination'}),
+            'destination': forms.TextInput(attrs={'placeholder': 'Enter your destination :'}),
         }
